@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Vast+Shadow&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 
 .section{
@@ -11,3 +12,10 @@
     font-family: 'Vast Shadow', cursive;
     font-size: 30px;
 }
+
+p{
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+}
+
+
