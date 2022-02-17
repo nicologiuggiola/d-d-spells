@@ -14,17 +14,17 @@ function manageResponse(response) {
 function onDataReady(data) {
     let par = document.getElementById("spells-main");
     for (const spell of data.results) {
+        let div = document.createElement("div");
+        div.className = "pCotainerMain"
+        
         let section = document.createElement('div');
         section.className = "section"
     
         addHtml(section, spell.name, false,"title-style");
-        par.appendChild(section); 
-        // console.log(spell.url);  
-        let button = document.createElement("button");
-        button.onclick = function () {searchDescription(spell.url, section)};
-        // button.addEventListener('click', searchDescription())
-        section.appendChild(button);
-        
+        div.appendChild(section);
+        par.appendChild(div); 
+        searchDescription(spell.url, section, div);
+        section.onclick = function () {onClickClose(div)};
     }
 }
 
@@ -49,9 +49,8 @@ function onError(error) {
 
 
 
-function fetchDesc(stringUrl, section) {
-    // console.log("https://www.dnd5eapi.co" + stringUrl);
-    fetch("https://www.dnd5eapi.co" + stringUrl).then(manageResponseLink).then((data) => onDataReadyLink(data, section)).catch(onError);
+function fetchDesc(stringUrl, section, divMain) {
+    fetch("https://www.dnd5eapi.co" + stringUrl).then(manageResponseLink).then((data) => onDataReadyLink(data, section, divMain)).catch(onError);
 }
 
 
@@ -59,50 +58,35 @@ function manageResponseLink(response) {
     return response.json();
 }
 
-function onDataReadyLink(data, section) {
-    
-    let closeWindow = document.getElementById("paragraphDesc");
-    //let closeWindow = document.getElementsByClassName("paragraphDesc");
-    if (closeWindow) {
-        console.log("window",closeWindow);
-        while (closeWindow) {
-            closeWindow.remove();
-            closeWindow = document.getElementById("paragraphDesc");
-        }
-    } 
-    
+function onDataReadyLink(data, section, divMain) {
     let arrayDesc = [data.range, data.material, data.duration, data.casting_time, data.attack_type, data.school.name, data.desc, data.higher_level];
-
+    let div = document.createElement("div");
+    div.setAttribute("id","pContainer");
     for (const element of arrayDesc) {
         if (!element) {
             continue;
         }
         let paragraph = document.createElement('p');
         paragraph.setAttribute("id","paragraphDesc");
-        //paragraph.className = "paragraphDesc";
         const textNode = document.createTextNode(element);
         paragraph.appendChild(textNode);
-        section.appendChild(paragraph);    
+        div.appendChild(paragraph);
+        divMain.appendChild(div)
+    }
+    div.setAttribute("style","display:none;");
+}
+
+function onClickClose(thisDiv) {
+    let children = thisDiv.children[1];
+    if (children.style.display === "block") {
+        children.style.display = "none";
+    } else if (children.style.display === "none"){
+        children.style.display = "block";
     }
 }
 
-function onClickClose() {
-    let closeWindow = document.getElementById("paragraphDesc");
-    //let closeWindow = document.getElementsByClassName("paragraphDesc");
-    console.log("window",closeWindow);
-    while (closeWindow) {
-        closeWindow.remove();
-        closeWindow = document.getElementById("paragraphDesc");
-    }
-}
-
-function close_window(id) {
-    document.getElementById(id).style.display = 'none';
-}
-
-
-function searchDescription(url, section) {
-    fetchDesc(url, section);
+function searchDescription(url, section, divMain) {
+    fetchDesc(url, section, divMain);
 }
 
 
