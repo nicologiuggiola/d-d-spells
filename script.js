@@ -19,6 +19,7 @@ function onDataReady(data) {
         
         let section = document.createElement('div');
         section.className = "section"
+        section.setAttribute("id","sec-"+spell.name);
     
         addHtml(section, spell.name, false,"title-style");
         div.appendChild(section);
@@ -152,6 +153,10 @@ function GiveTitleDescription(paragraph, descIndex) {
     }
 
     return paragraph;
+}
+
+function searchSpell(string) {
+    location.href="#sec-" + string;
 }
 //ciclo per ogni child
 //controllare

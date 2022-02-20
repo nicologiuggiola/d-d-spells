@@ -31,7 +31,7 @@ header h1{
     max-width: 1200px;
     min-width: 350px;
     margin-bottom: 50px;
-    background-color: red;
+    background-color: darkred;
     position: relative;
     margin-left: auto;
     margin-right: auto;
@@ -127,4 +127,9 @@ nav a{
 .description-titles{
     font-weight: bold;
     color: darkred;
+}
+
+footer{
+    height: 300px;
+    background-color: black;
 }
