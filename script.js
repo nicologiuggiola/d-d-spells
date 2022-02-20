@@ -158,5 +158,10 @@ function GiveTitleDescription(paragraph, descIndex) {
 function searchSpell(string) {
     location.href="#sec-" + string;
 }
+
+function enterAmt(ev) {
+    let result = document.getElementById('amt2').value = ev.value;
+    return result
+}
 //ciclo per ogni child
 //controllare

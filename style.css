@@ -46,6 +46,10 @@ header h1{
     margin-right: auto;
 }
 
+#testo{
+    background-color: white;
+}
+
 #spells-main{
     position: relative;
     padding-top: 1px;
