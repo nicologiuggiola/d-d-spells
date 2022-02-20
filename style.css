@@ -73,7 +73,7 @@ header h1{
 p{
     font-family: 'Roboto', sans-serif;
     font-size: 15px;
-    padding-top: 20px;
+    font-weight: 500;
 }
 
 .title-style{
@@ -83,10 +83,10 @@ p{
 }
 
 #pContainer{
-    max-width: 1000px;
+    max-width: 800px;
     position: relative;
-    left: 25.5%;
-
+    margin-left: auto;
+    margin-right: auto;
 }
 
 nav{
@@ -103,4 +103,28 @@ nav a{
     text-decoration: none;
     font-family: 'Vast Shadow', cursive;
     color: white;
+}
+
+#paragraphDesc1 p{
+    display: inline;
+}
+#paragraphDesc2 p{
+    display: inline;
+}
+#paragraphDesc3 p{
+    display: inline;
+}
+#paragraphDesc4 p{
+    display: inline;
+}
+#paragraphDesc5 p{
+    display: inline;
+}
+#paragraphDesc6 p{
+    display: inline;
+}
+
+.description-titles{
+    font-weight: bold;
+    color: darkred;
 }

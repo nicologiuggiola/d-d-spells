@@ -62,16 +62,20 @@ function onDataReadyLink(data, section, divMain) {
     let arrayDesc = [data.range, data.material, data.duration, data.casting_time, data.attack_type, data.school.name, data.desc, data.higher_level];
     let div = document.createElement("div");
     div.setAttribute("id","pContainer");
+    let descIndex = 1;
     for (const element of arrayDesc) {
         if (!element) {
+            descIndex++;
             continue;
         }
         let paragraph = document.createElement('p');
-        paragraph.setAttribute("id","paragraphDesc");
+        paragraph.setAttribute("id","paragraphDesc" + descIndex);
+        paragraph = GiveTitleDescription(paragraph, descIndex);
         const textNode = document.createTextNode(element);
         paragraph.appendChild(textNode);
         div.appendChild(paragraph);
         divMain.appendChild(div)
+        descIndex++;
     }
     div.setAttribute("style","display:none;");
 }
@@ -89,6 +93,65 @@ function searchDescription(url, section, divMain) {
     fetchDesc(url, section, divMain);
 }
 
+function GiveTitleDescription(paragraph, descIndex) {
+    if (descIndex === 1) {
+        const titleTextNode = document.createTextNode("Range: ")
+        let p_desc = document.createElement('p');
+        p_desc.className = "description-titles";
+        p_desc.appendChild(titleTextNode)
+        paragraph.appendChild(p_desc)
+    }
+    if (descIndex === 2) {
+        const titleTextNode = document.createTextNode("Materials: ")
+        let p_desc = document.createElement('p');
+        p_desc.className = "description-titles";
+        p_desc.appendChild(titleTextNode)
+        paragraph.appendChild(p_desc)
+    }
+    if (descIndex === 3) {
+        const titleTextNode = document.createTextNode("Duration: ")
+        let p_desc = document.createElement('p');
+        p_desc.className = "description-titles";
+        p_desc.appendChild(titleTextNode)
+        paragraph.appendChild(p_desc)
+    }
+    if (descIndex === 4) {
+        const titleTextNode = document.createTextNode("Casting Time: ")
+        let p_desc = document.createElement('p');
+        p_desc.className = "description-titles";
+        p_desc.appendChild(titleTextNode)
+        paragraph.appendChild(p_desc)
+    }
+    if (descIndex === 5) {
+        const titleTextNode = document.createTextNode("Attack Type: ")
+        let p_desc = document.createElement('p');
+        p_desc.className = "description-titles";
+        p_desc.appendChild(titleTextNode)
+        paragraph.appendChild(p_desc)
+    }
+    if (descIndex === 6) {
+        const titleTextNode = document.createTextNode("School: ")
+        let p_desc = document.createElement('p');
+        p_desc.className = "description-titles";
+        p_desc.appendChild(titleTextNode)
+        paragraph.appendChild(p_desc)
+    }
+    if (descIndex === 7) {
+        const titleTextNode = document.createTextNode("Description: ")
+        let p_desc = document.createElement('p');
+        p_desc.className = "description-titles";
+        p_desc.appendChild(titleTextNode)
+        paragraph.appendChild(p_desc)
+    }
+    if (descIndex === 8) {
+        const titleTextNode = document.createTextNode("At Higher Levels: ")
+        let p_desc = document.createElement('p');
+        p_desc.className = "description-titles";
+        p_desc.appendChild(titleTextNode)
+        paragraph.appendChild(p_desc)
+    }
 
+    return paragraph;
+}
 //ciclo per ogni child
 //controllare
