@@ -31,7 +31,7 @@ function onDataReady(data) {
 
 
 function addHtml(htmlElement, text, isNewLine = false, className) {
-    const span = document.createElement('span');
+    const span = document.createElement('h3');
     span.className += className + " ";
     const textNode = document.createTextNode(text);
     span.appendChild(textNode)
@@ -68,6 +68,12 @@ function onDataReadyLink(data, section, divMain) {
         if (!element) {
             descIndex++;
             continue;
+        }
+        if (descIndex === 6) {
+            const school = document.createElement('h5');
+            const schoolNode = document.createTextNode(element);
+            school.appendChild(schoolNode);
+            section.appendChild(school)
         }
         let paragraph = document.createElement('p');
         paragraph.setAttribute("id","paragraphDesc" + descIndex);
@@ -159,9 +165,5 @@ function searchSpell(string) {
     location.href="#sec-" + string;
 }
 
-function enterAmt(ev) {
-    let result = document.getElementById('amt2').value = ev.value;
-    return result
-}
 //ciclo per ogni child
 //controllare

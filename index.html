@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
+    <header id="headerID">
         <h1>PLAYER'S HANDBOOK <br> <br> SPELL INDEX</h1>
     </header>
     <div class="alpha-search">
@@ -36,17 +36,24 @@
             <a href="#sec-Wall of Fire">W</a>
             <a href="#sec-Zone of Truth">Z</a>
         </nav>
-        <!-- <form id="form"> 
-            <input type="text" id="query" name="q" placeholder="Search...">
-            <button onclick="searchSpell(document.getElementById('query').value)">Search</button>
-          </form> -->
         <div id="form">
             <input type="text" id="query" name="q" placeholder="Search...">
             <button onclick="searchSpell(document.getElementById('query').value)">Search</button>
         </div>
     </div>
     <div id="spells-main"></div>
-    <footer></footer>
+    <div id="service">
+        <a href="#headerID">TOP</a>
+        <a href="#footerID">BOTTOM</a>
+    </div>
+    <footer id="footerID">
+        <p>Open Game License v 1.0a Copyright 2000, Wizards of the Coast, Inc.
+
+            System Reference Document 5.1 Copyright 2016, Wizards of the Coast, Inc.; Authors Mike Mearls, Jeremy Crawford, Chris Perkins, Rodney Thompson, Peter Lee, James Wyatt, Robert J. Schwalb, Bruce R. Cordell, Chris Sims, and Steve Townshend, based on original material by E. Gary Gygax and Dave Arneson.
+            
+            DnD5e.info Copyright 2018, Fortitier Games; Author Dave McAlister.</p>
+    </footer>
+    <div style="background-color: darkred; height: 7px;"></div>
 </body>
 <script src="script.js"></script>
 </html>
