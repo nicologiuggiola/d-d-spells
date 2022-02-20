@@ -11,25 +11,44 @@ header{
     background-image: url("1ba7eacf-c1f7-4ce7-9b1f-529abf44ff8c.__CR0\,0\,970\,600_PT0_SX970_V1___.jpg");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 1200px 500px;
+    background-size: 1200px 600px;
     left: 25%;
-    margin-bottom: 50px;
+    min-width: 558px;
 }
 
-.spells-main{
+.alpha-search{
+    height: 50px;
     max-width: 1200px;
+    min-width: 558px;
+    margin-bottom: 50px;
+    background-color: red;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
 }
+
+#spells-main{
+    position: relative;
+    padding-top: 1px;
+    font-family: 'Raleway', sans-serif;
+    max-width: 1215px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
 .section{
     font-family: 'Vast Shadow', cursive;
     font-size: 30px;
     background-image: url("section-background.png");
     background-repeat: no-repeat;
-    background-size: 40% 60px;
-    height: 60px;
+    background-size: 558px 65px;
+    height: 66px;
     position: relative;
-    left: 30%;
     margin-bottom: 20px;
+    max-width: 50%;
+    min-width: 558px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 p{
@@ -49,4 +68,14 @@ p{
     position: relative;
     left: 25.5%;
 
+}
+
+nav{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav a{
+    margin-left: 20px;
 }
