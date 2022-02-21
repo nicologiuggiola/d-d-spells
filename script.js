@@ -162,7 +162,14 @@ function GiveTitleDescription(paragraph, descIndex) {
 }
 
 function searchSpell(string) {
-    location.href="#sec-" + string;
+    const spellArray = document.getElementsByClassName('title-style');
+    let newString = string.charAt(0).toUpperCase() + string.slice(1);
+    for (let i = 0; i < spellArray.length; i++) {
+        if (spellArray[i].textContent.includes(newString)) {
+            location.href="#sec-" + spellArray[i].textContent;
+            break;
+        }
+    }
 }
 
 //ciclo per ogni child
